@@ -24,6 +24,19 @@
       return this._transformCharacter(res.data.results[0]);
    }
 
+
+   _transformCharacterr = (res) =>{
+
+      return {
+         name:res.data.result[0].name,
+         discription:res.data.result[0].discription,
+         thumbnail:res.data.result[0].thumbnail.patch + '.' + res.data.result[0].thumbnail.extension ,//Формируем путь из двух значений объекта ,
+         homepage:res.data.result[0].urls[0].url,
+         wiki:res.data.result[0].urls[1].url,
+   }
+
+   }
+
    _transformCharacter = (char) =>{
 
       return {
